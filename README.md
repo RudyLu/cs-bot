@@ -43,6 +43,7 @@ yarn test
 ## Tech. Notes
 
 In general, Leverage express generator as the boilerplate.
+- use prettier to make the coding style consistent.
 
 ### cs-bot-api
 - Use DI (Dependency Injection) in `cs-bot-api`'s `MessageController` so that we can switch to use other services. This is also helpful for testing (detailed below).
@@ -56,6 +57,7 @@ In general, Leverage express generator as the boilerplate.
 ## Future work
 - Extract the hard-coded config as environment variables.
 - Extract the model layer, and use DI as well.
+- Add ESLint.
 - Leverage some IoC container, like [awilix](https://github.com/jeffijoe/awilix) to make the configuration of DI more manageable.
 - Enhance the error handling and add more test cases.
 - Dockerize these 2 services.
