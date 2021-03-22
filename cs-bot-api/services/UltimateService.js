@@ -8,7 +8,6 @@ exports.getIntents = async function (input) {
       message: input,
       conversationId: '1234567890',
     };
-    console.log(inputBody);
 
     var res = await fetch(`${BASE_URL}/intents`, {
       method: 'POST',

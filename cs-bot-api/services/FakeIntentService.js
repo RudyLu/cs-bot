@@ -1,7 +1,7 @@
 exports.getIntents = async function (input) {
   try {
     if (!input) {
-        return [];
+      return [];
     }
 
     var result = {

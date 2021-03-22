@@ -8,7 +8,6 @@ const TranslationService = require('../services/FakeTranslationService');
 describe('Testing chat API', () => {
   let req, status, json, res;
   beforeEach(() => {
-
     status = sinon.stub();
     json = sinon.stub();
 

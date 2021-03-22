@@ -11,7 +11,7 @@ class TranslationController {
       if (message.length == 0) {
         return res.status(404).json({
           status: 404,
-          result: "Not found"
+          result: 'Not found',
         });
       }
 
