@@ -8,13 +8,16 @@ class MessageController {
   async getMessage(req, res, next) {
     // Validate request parameters, queries using express-validator
     try {
-      console.log(req.body);
-
       var input = req.body.input;
 
       var intents = await this.messageService.getIntents(input);
-      console.log(Array.isArray(intents));
-      console.log(intents);
+      if (intents.length == 0) {
+        return res.status(404).json({
+          status: 404,
+          result: 'no intent',
+        });
+      }
+
       // sort by confidence
       intents.sort((a, b) => a.confidence - b.condidence);
       var message = await this.translationService.getMessage(intents[0].name);
@@ -24,6 +27,7 @@ class MessageController {
         result: message,
       });
     } catch (e) {
+      console.error(e);
       return res.status(400).json({ status: 400, message: e.message });
     }
   }
